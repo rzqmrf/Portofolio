@@ -1,0 +1,173 @@
+/* Style dasar */
+body {
+    margin: 0;
+    font-family: 'Times New Roman', Times, serif;
+    background-color: #121212;
+    color: #ffffff;
+}
+
+header {
+    background-color: #1e1e1e;
+    padding: 100px 20px;
+    text-align: center;
+    background-image: url('jp.jpg');
+    background-size: cover;
+    animation: fadeIn 2s ease-in-out;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+.header-content h1 {
+    margin: 0;
+    font-size: 36px;
+    animation: slideIn 1.5s ease-in-out;
+}
+
+@keyframes slideIn {
+    from {
+        transform: translateY(-50px);
+        opacity: 0;
+    }
+    to {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+.header-content p {
+    font-size: 18px;
+    color: #cccccc;
+    animation: fadeIn 2.5s ease-in-out;
+}
+
+/* Atur tampilan navigasi */
+nav {
+    width: 100%;
+}
+
+nav ul {
+    display: flex;
+    justify-content: space-around;
+    padding: 0;
+    list-style-type: none;
+    margin: 0;
+    background-color: #333;
+    animation: slideDown 1s ease-in-out;
+}
+
+@keyframes slideDown {
+    from {
+        transform: translateY(-100%);
+    }
+    to {
+        transform: translateY(0);
+    }
+}
+
+nav ul li {
+    margin: 0;
+}
+
+nav ul li a {
+    color: #ffffff;
+    text-decoration: none;
+    font-size: 18px;
+    padding: 15px 30px;
+    display: block;
+    transition: background-color 0.3s ease;
+}
+
+nav ul li a:hover {
+    background-color: #4c4e4e;
+}
+
+/* Tombol menu toggle untuk perangkat mobile */
+.menu-toggle {
+    display: none;
+    background-color: #333;
+    color: #fff;
+    text-align: left;
+    padding: 15px;
+    font-size: 22px;
+    cursor: pointer;
+}
+
+/* Tampilkan menu toggle di perangkat kecil */
+@media (max-width: 600px) {
+    nav ul {
+        flex-direction: column;
+        display: none;
+        width: 100%;
+    }
+
+    nav ul.show {
+        display: flex;
+    }
+
+    .menu-toggle {
+        display: block;
+        text-align: center;
+        background-color: #333;
+        color: white;
+        padding: 10px 0;
+        font-size: 22px;
+        cursor: pointer;
+    }
+
+    nav ul li a {
+        padding: 10px 20px;
+    }
+}
+
+/* Konten utama */
+.content {
+    padding: 40px 20px;
+    max-width: 1000px;
+    margin: 0 auto;
+    line-height: 1.6;
+}
+
+.about-me, .biodata, .contact-form {
+    margin-bottom: 50px;
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 1s ease-out, transform 1s ease-out;
+}
+
+.about-me.visible, .biodata.visible, .contact-form.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.about-me h2, .biodata h2, .contact-form h2 {
+    font-size: 28px;
+    margin-bottom: 20px;
+}
+
+.photo {
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+    background-color: #2e2e2e;
+    margin: 0 auto 20px;
+    background-image: url('4.jpg');
+    background-size: cover;
+    background-position: center;
+}
+
+/* Footer */
+footer {
+    background-color: #1e1e1e;
+    text-align: center;
+    padding: 20px;
+    font-size: 14px;
+    color: #ccc;
+    animation: fadeIn 3s ease-in-out;
+}
