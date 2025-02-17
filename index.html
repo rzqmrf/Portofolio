@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Muhammad Rozaq Ma'ruf - Personal Website</title>
+    <link rel="icon" href="favicon.ico" type="image/x-icon">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <div class="header-content">
+            <h1>Muhammad Rozaq Ma'ruf</h1>
+            <p>Front-end Developer</p>
+        </div>
+    </header>
+
+    <!-- Tombol Menu Toggle -->
+    <div class="menu-toggle" onclick="toggleMenu()">☰</div>
+
+    <nav>
+        <ul>
+            <li><a href="#home">Home</a></li>
+            <li><a href="#about">About Me</a></li>
+            <li><a href="#biodata">Biodata</a></li>
+            <li><a href="#contact">Contact Me</a></li>
+            <li><a href="login.html">Login</a></li>
+        </ul>
+    </nav>
+
+    <div class="content" id="home">
+        <section class="about-me" id="about">
+            <h2>About Me</h2>
+            <div class="photo"></div>
+            <p>Hello! My name is Muhammad Rozaq Ma'ruf. I am a student at the Electronic engineering Polytechnic institute of Surabaya majoring in informatics engineering. My hobbies are playing volleyball, futsal, and reading novels. I believe that learning is a lifelong process and always try to develop myself both personally and professionally.</p>
+        </section>
+
+        <section class="biodata" id="biodata">
+            <h2>Biodata</h2>
+            <ul>
+                <li><strong>Name:</strong> Muhammad Rozaq Ma'ruf</li>
+                <li><strong>Age:</strong> 18</li>
+                <li><strong>Location:</strong> Indonesia</li>
+                <li><strong>Occupation:</strong> University student</li>
+                <li><strong>Interests:</strong> Coding, Technology, Problem Solving</li>
+            </ul>
+        </section>
+
+        <section class="contact-info" id="contact">
+            <h2>Contact Me</h2>
+            <p>If you want to get in touch, feel free to reach out through the following contact information or connect with me via social media!</p>
+            <ul>
+                <li><strong>Email:</strong> rozaqmaruf06@gmail.com</li>
+            </ul>
+        </section>
+    </div>
+
+    <footer>
+        <p>&copy; 2024 Muhammad Rozaq Ma'ruf. All Rights Reserved.</p>
+    </footer>
+
+    <script>
+        function toggleMenu() {
+            const navMenu = document.querySelector("nav ul");
+            navMenu.classList.toggle("show");
+        }
+
+        // Animasi saat scroll
+        const sections = document.querySelectorAll('.about-me, .biodata, .contact-info');
+
+        const observer = new IntersectionObserver(entries => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                }
+            });
+        }, {
+            threshold: 0.1
+        });
+
+        sections.forEach(section => {
+            observer.observe(section);
+        });
+    </script>
+</body>
+</html>
