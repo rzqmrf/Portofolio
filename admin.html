@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard</title>
+    <link rel="icon" href="asset/favicon.ico" type="image/x-icon">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <link rel="stylesheet" href="asset/admin.css">
+</head>
+<body>
+    <div class="sidebar">
+        <h2>Dashboard</h2>
+        <div id="current-time" class="text-white mb-4"></div>
+        <p>Muhammad Rozaq Ma'ruf</p>
+        <a href="#"><i class="fas fa-home"></i> Dashboard</a>
+        <a href="#"><i class="fas fa-laptop-code"></i> Skills</a>
+        <a href="#"><i class="fas fa-project-diagram"></i> Project</a>
+        <a href="index.html" class="btn btn-danger">
+            <i class="fas fa-sign-out-alt"></i> Logout
+        </a>
+
+        <!-- Social Media Icons -->
+        <div class="social-icons">
+            <a href="https://www.instagram.com/rozaq.mrf" target="_blank"><i class="fab fa-instagram"></i></a>
+            <a href="https://facebook.com" target="_blank"><i class="fab fa-facebook"></i></a>
+            <a href="https://youtube.com" target="_blank"><i class="fab fa-youtube"></i></a>
+        </div>
+    </div>
+
+    <div class="main-content">
+        <div class="card text-center">
+            <h3>About Me</h3>
+            <img src="asset/4.jpg" alt="Profile" class="img-circle">
+            <p>Hello! My name is Muhammad Rozaq Ma'ruf. 
+            I am a student at the Electronic engineering Polytechnic institute of Surabaya majoring in informatics engineering. 
+            I have an interest in technology and programming.</p>
+        </div>
+
+        <div class="skills-card">
+            <h3>Admin Skills</h3>
+            <div class="row skills-panel g-3" id="skillsList">
+                <!-- Skills will be rendered here by JavaScript -->
+            </div>
+            <div class="text-center">
+                <button class="btn btn-success" data-bs-toggle="modal" data-bs-target="#addSkillModal">
+                    <i class="fas fa-plus"></i> Tambah Keahlian
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Add Skill Modal -->
+    <div class="modal fade" id="addSkillModal" tabindex="-1">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title">Add Skill</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+                </div>
+                <div class="modal-body">
+                    <form id="addSkillForm">
+                        <div class="mb-3">
+                            <label for="newSkillName" class="form-label">Skill Name</label>
+                            <input type="text" class="form-control" id="newSkillName" required>
+                        </div>
+                        <div class="mb-3">
+                            <label for="newSkillLevel" class="form-label">Level (%)</label>
+                            <input type="number" class="form-control" id="newSkillLevel" min="0" max="100" required>
+                        </div>
+                        <button type="button" class="btn btn-success" onclick="addSkill()">Tambah</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Scripts -->
+    <script>
+        let skills = [
+            { name: "HTML", level: 85 },
+            { name: "CSS", level: 80 },
+            { name: "JavaScript", level: 50 },
+        ];
+
+        // Render skills with progress bar
+        function renderSkills() {
+            const skillsList = document.getElementById('skillsList');
+            skillsList.innerHTML = '';
+            skills.forEach((skill, index) => {
+                skillsList.innerHTML += `
+                    <div class="col-md-4">
+                        <div class="card p-3">
+                            <h3>${skill.name}</h3>
+                            <div class="progress my-2">
+                                <div class="progress-bar bg-primary" style="width: ${skill.level}%;" role="progressbar"></div>
+                            </div>
+                            <p>Level: <strong>${skill.level}%</strong></p>
+                            <button class="btn btn-primary mt-2" onclick="editSkill(${index})">Edit</button>
+                            <button class="btn btn-danger mt-2" onclick="deleteSkill(${index})">Delete</button>
+                        </div>
+                    </div>
+                `;
+            });
+        }
+
+        // Add new skill
+        function addSkill() {
+            const name = document.getElementById('newSkillName').value.trim();
+            const level = parseInt(document.getElementById('newSkillLevel').value);
+
+            if (!name || level < 0 || level > 100 || isNaN(level)) {
+                alert("Masukkan data yang valid.");
+                return;
+            }
+
+            skills.push({ name, level });
+            renderSkills();
+            const modal = bootstrap.Modal.getInstance(document.getElementById('addSkillModal'));
+            modal.hide();
+        }
+
+        // Delete skill with confirmation
+        function deleteSkill(index) {
+            const confirmDelete = confirm("Are you sure you want to delete this skill?");
+            if (confirmDelete) {
+                skills.splice(index, 1);
+                renderSkills();
+            }
+        }
+
+        // Update time
+        function updateTime() {
+            const now = new Date();
+            const hours = now.getHours().toString().padStart(2, '0');
+            const minutes = now.getMinutes().toString().padStart(2, '0');
+            const seconds = now.getSeconds().toString().padStart(2, '0');
+            const timeString = `${hours}:${minutes}:${seconds}`;
+            document.getElementById('current-time').textContent = timeString;
+        }
+
+        setInterval(updateTime, 1000);
+        updateTime();
+        renderSkills();
+    </script>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

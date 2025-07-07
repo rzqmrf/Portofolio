@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Web</title>
+    <link rel="icon" href="asset/favicon.ico" type="image/x-icon">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Roboto:wght@300;400;500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/asset/style.css">
+</head>
+<body>
+    <header>
+        <div class="logo">
+            <div class="logo-img"></div>
+            <span>Muhammad Rozaq Ma'ruf</span>
+        </div>
+        <input type="checkbox" id="nav-toggle">
+        <label for="nav-toggle" class="hamburger">
+            <div></div>
+            <div></div>
+            <div></div>
+        </label>
+        <nav>
+            <ul>
+                <li><a href="#home">Home</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#biodata">Biodata</a></li>
+                <li><a href="#skills">Skills</a></li>
+                <li><a href="#education">Education</a></li>
+                <li><a href="#contact">Contact</a></li>
+                <li><a href="login.html">Login</a></li>
+            </ul>
+            <button class="theme-toggle">
+                <span class="sun-icon active">☀</span>
+                <span class="moon-icon">🌙</span>
+            </button>
+        </nav>
+    </header>
+
+    <section class="hero" id="home">
+        <div class="hero-content">
+            <h1>Muhammad Rozaq Ma'ruf</h1>
+            <span class="static-title">Front-end Developer</span>
+        </div>
+        <div class="hero-image">
+            <div class="profile-img"></div>
+            <div class="frame"></div>
+        </div>
+        <button class="nav-arrow down-arrow" data-target="#about">↓</button>
+    </section>
+
+    <div class="content">
+        <section class="section about-me" id="about">
+            <h2>About Me</h2>
+            <div class="about-me">
+                <div class="about-img"></div>
+                <div class="about-text">
+                    <p>Hai, nama saya Muhammad Rozaq Ma'ruf. Saya seorang mahasiswa di politeknik elektronika negeri surabaya (PENS). Saya memiliki minat dibidang teknologi dan desain.</p>
+                </div>
+            </div>
+            <button class="nav-arrow down-arrow" data-target="#biodata">↓</button>
+        </section>
+
+        <section class="section biodata" id="biodata">
+            <h2>Biodata</h2>
+            <ul>
+                <li><strong>Name:</strong> Muhammad Rozaq Ma'ruf</li>
+                <li><strong>Age:</strong> 19</li>
+                <li><strong>Location:</strong> Indonesia</li>
+                <li><strong>Occupation:</strong> University Student</li>
+                <li><strong>Interests:</strong> Coding, Technology, Problem Solving</li>
+            </ul>
+            <button class="nav-arrow down-arrow" data-target="#skills">↓</button>
+        </section>
+
+        <section class="section skills" id="skills">
+            <h2>Skills</h2>
+            <ul>
+                <li>
+                    <strong>Frontend</strong>
+                    <div class="skill-tags">
+                        <span>HTML</span>
+                        <span>CSS</span>
+                    </div>
+                </li>
+                <li>
+                    <strong>Tools</strong>
+                    <div class="skill-tags">
+                        <span>VS Code</span>
+                        <span>Git</span>
+                    </div>
+                </li>
+                <li>
+                    <strong>Soft Skills</strong>
+                    <div class="skill-tags">
+                        <span>Problem Solving</span>
+                        <span>Teamwork</span>
+                    </div>
+                </li>
+            </ul>
+            <button class="nav-arrow down-arrow" data-target="#education">↓</button>
+        </section>
+
+        <section class="section education" id="education">
+            <h2>Education</h2>
+            <ul>
+                <li>
+                    <strong>General</strong>
+                    MI Assyafi'iyah Keben<br>
+                    2012 - 2018
+                </li>
+                <li>
+                    <strong>General</strong>
+                    SMP Negeri 1 Lamongan<br>
+                    2018 - 2021
+                </li>
+                <li>
+                    <strong>IPA</strong>
+                    SMA Negeri 2 Lamongan<br>
+                    2021 - 2024
+                </li>
+                <li>
+                    <strong>Informatics Engineering</strong>
+                    Electronic Engineering Polytechnic Institute of Surabaya<br>
+                    2024 - Present
+                </li>
+            </ul>
+            <button class="nav-arrow down-arrow" data-target="#contact">↓</button>
+        </section>
+
+        <section class="section contact-info" id="contact">
+            <h2>Contact</h2>
+            <p class="get-in-touch">Get in Touch</p>
+            <div class="contact-details"></div>
+            <div class="social-links">
+                <a href="https://www.linkedin.com/in/muhammad-rozaq-ma-ruf-59a88033b/" target="_blank">
+                    <img src="asset/linkedin.png" alt="LinkedIn">
+                </a>
+                <a href="https://www.instagram.com/rozaq.mrf/" target="_blank">
+                    <img src="asset/instagram.png" alt="Instagram">
+                </a>
+                <a href="https://github.com/rzqmrf/" target="_blank">
+                    <img src="asset/github.png" alt="GitHub">
+                </a>
+            </div>
+        </section>
+    </div>
+
+    <footer>
+        <p>Copyright © 2025 Muhammad Rozaq Ma'ruf. All Rights Reserved.</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>

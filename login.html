@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login Form</title>
+    <link rel="stylesheet" href="asset/login.css">
+    <link rel="icon" href="asset/favicon.ico" type="image/x-icon">
+</head>
+
+<body>
+    <!-- Partikel bergerak -->
+    <div class="particle" style="top: 10%; left: 20%; animation-duration: 8s;"></div>
+    <div class="particle" style="top: 20%; left: 50%; animation-duration: 8s;"></div>
+    <div class="particle" style="top: 30%; left: 70%; animation-duration: 9s;"></div>
+    <div class="particle" style="top: 50%; left: 30%; animation-duration: 7s;"></div>
+    <div class="particle" style="top: 60%; left: 80%; animation-duration: 8s;"></div>
+    <div class="particle" style="top: 10%; left: 20%; animation-duration: 8s;"></div>
+    <div class="particle" style="top: 10%; left: 20%; animation-duration: 8s;"></div>
+
+    <div class="login-container">
+        <form class="login-form" id="loginForm">
+            <h2>Sign-in</h2>
+            <div class="form-group">
+                <input type="text" id="username" name="username" placeholder=" " required>
+                <label for="username">Username</label>
+            </div>
+            <div class="form-group">
+                <input type="password" id="password" name="password" placeholder=" " required>
+                <label for="password">Password</label>
+            </div>
+            <button type="submit" class="btn">Login</button>
+            <div class="forgot-password">
+                <a href="#">Forgot Password?</a>
+            </div>
+        </form>
+    </div>
+
+    <script src="login.js"></script>
+</body>
+</html>

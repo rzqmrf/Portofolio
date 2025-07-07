@@ -1,0 +1,151 @@
+:root {
+            --primary-bg: #ffffff;
+            --secondary-bg: #f0f4f7;
+            --sidebar-bg: #007bff;
+            --text-color: #333;
+            --card-bg: #ffffff;
+            --card-shadow: rgba(0, 0, 0, 0.1);
+            --border-color: #ddd;
+        }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            background-color: var(--primary-bg);
+            color: var(--text-color);
+        }
+
+        .sidebar {
+            height: 100vh;
+            width: 250px;
+            background-color: var(--sidebar-bg);
+            color: white;
+            position: fixed;
+            top: 0;
+            left: 0;
+            padding: 20px;
+            transition: all 0.3s ease;
+        }
+
+        .sidebar h2 {
+            font-size: 24px;
+            font-weight: bold;
+            margin-bottom: 20px;
+        }
+
+        .sidebar a {
+            color: white;
+            text-decoration: none;
+            display: block;
+            padding: 10px 20px;
+            margin: 10px 0;
+            border-radius: 8px;
+            font-size: 16px;
+            transition: all 0.3s;
+        }
+
+        .sidebar a:hover {
+            background-color: rgba(255, 255, 255, 0.2);
+        }
+
+        .social-icons {
+            margin-top: 20px;
+            display: flex;
+            justify-content: space-around;
+        }
+
+        .social-icons a {
+            color: white;
+            font-size: 20px;
+            transition: color 0.3s;
+        }
+
+        .social-icons a:hover {
+            color: #ddd;
+        }
+
+        .main-content {
+            margin-left: 250px;
+            padding: 30px;
+        }
+
+        .card {
+            background-color: var(--card-bg);
+            box-shadow: 0 4px 6px var(--card-shadow);
+            border-radius: 10px;
+            margin-bottom: 30px;
+            padding: 20px;
+        }
+
+        .card h3 {
+            font-size: 22px;
+            font-weight: bold;
+        }
+
+        .card img {
+            border-radius: 50%;
+            border: 5px solid #ddd;
+            margin: 20px auto;
+            width: 150px;
+            height: 150px;
+            object-fit: cover;
+        }
+
+        .progress {
+            background-color: var(--secondary-bg);
+            height: 15px;
+            border-radius: 10px;
+            overflow: hidden;
+        }
+
+        .progress-bar {
+            height: 100%;
+            transition: width 0.3s;
+        }
+
+        .footer {
+            text-align: center;
+            margin-top: 30px;
+            color: var(--text-color);
+        }
+
+        /* Re-designed Admin Skills title */
+        .admin-skills-title {
+            font-size: 36px;
+            font-weight: 600;
+            color: #007bff;
+            letter-spacing: 1.5px;
+            text-transform: uppercase;
+            text-align: center;
+            margin-bottom: 30px;
+        }
+
+        /* Styling for card buttons */
+        .card button {
+            transition: all 0.3s ease;
+        }
+
+        .card button:hover {
+            background-color: #0088ff;
+            color: #fff;
+        }
+
+        /* Styling for skills card container */
+        .skills-card {
+            border-radius: 10px;
+            box-shadow: 0 4px 6px var(--card-shadow);
+            margin-bottom: 30px;
+            padding: 20px;
+            background-color: var(--card-bg);
+        }
+
+        .skills-card h3 {
+            font-size: 22px;
+            font-weight: bold;
+            color: #000000;
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        .skills-card .card-body {
+            padding: 15px;
+        }
